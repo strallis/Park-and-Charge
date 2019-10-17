@@ -6,6 +6,18 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import BedrifterScreen from '../screens/BedrifterScreen';
+
+
+
+
+import BedrifterComponent from '../components/BedrifterComponent';
+import HyrUtComponent from '../components/HyrUtComponent';
+import ParkeraComponent from '../components/ParkeraComponent';
+import ProfilComponent from '../components/ProfilComponent';
+
+
+
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -20,16 +32,10 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
+    <BedrifterComponent
+      focused={focused} />
   ),
 };
 
@@ -43,13 +49,35 @@ const LinksStack = createStackNavigator(
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+  tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <HyrUtComponent
+      focused={focused} />
   ),
 };
 
 LinksStack.path = '';
+
+
+
+
+const ProfilStack = createStackNavigator(
+  {
+    Links: LinksScreen,
+  },
+  config
+);
+
+ProfilStack.navigationOptions = {
+  tabBarLabel: ' ',
+  tabBarIcon: ({ focused }) => (
+    <ProfilComponent
+      focused={focused} />
+  ),
+};
+
+ProfilStack.path = '';
+
 
 const SettingsStack = createStackNavigator(
   {
@@ -59,19 +87,40 @@ const SettingsStack = createStackNavigator(
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <ParkeraComponent
+      focused={focused} />
   ),
 };
 
 SettingsStack.path = '';
 
+bottomNavigatorConfigs = {
+   initialRouteName: "HomeStack",
+   tabBarOptions: {
+       style:{  width: 375,
+                height: 112,
+                shadowOffset: {
+                  height: -2
+                },
+                shadowColor: "#111",
+                shadowOpacity: 0.2,
+                shadowRadius: 1.2
+              }
+   },
+};
+
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
-});
+  ProfilStack,
+
+},
+bottomNavigatorConfigs
+
+);
 
 tabNavigator.path = '';
 

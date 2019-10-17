@@ -6,6 +6,8 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import AppNavigator from './navigation/AppNavigator';
+import NavBarPark from "./components/NavBarPark";
+
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -22,7 +24,11 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
+
+        <View style={styles.containernavBarPark}>
+          <AppNavigator style={styles.navBarPark} />
+        </View>
+
       </View>
     );
   }
@@ -59,4 +65,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  containernavBarPark: {
+  flex: 1,
+  width: 375,
+  height: 112,
+  justifyContent: 'flex-end',
+},
+navBarPark: {
+  width: 375,
+  height: 112
+},
 });
