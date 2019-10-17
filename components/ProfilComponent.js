@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
     opacity: 1
 },
   btnTextLight: {
-    color: "rgba(0,0,0,1)",
+    color: "rgba(128,128,128,1)",
     opacity: 1,
     paddingTop: 4,
     fontSize: 14,
   },
   btnTextDark: {
-    color: "rgba(128,128,128,1)",
+    color: "rgba(0,0,0,1)",
     opacity: 1,
     paddingTop: 4,
     fontSize: 14,

@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     opacity: 0.8
   },
   btnTextDark: {
-    color: "rgba(128,128,128,1)",
+    color: "rgba(0,0,0,1)",
     opacity: 0.8
   }
 });
