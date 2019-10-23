@@ -5,6 +5,8 @@ import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
+import * as Font from 'expo-font';
+
 
 import Colors from '../constants/Colors';
 
@@ -57,7 +59,8 @@ const styles = StyleSheet.create({
 },
   btn1TextLight: {
     color: "rgba(128,128,128,1)",
-    opacity: 0.8
+    opacity: 0.8,
+    fontFamily: "atm-font"
   },
   btn1TextDark: {
     color: "rgba(0,0,0,1)",
