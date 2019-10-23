@@ -15,7 +15,6 @@ export default function HyrUtComponent(props) {
     <View
       style={styles.btnWrapper1}
     >
-
       <EntypoIcon name="credit" style={props.focused ? styles.iconDark : styles.iconLight} />
       <Text style={props.focused ? styles.btnTextDark : styles.btnTextLight}>Hyr ut</Text>
 

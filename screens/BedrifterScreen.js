@@ -109,11 +109,13 @@ export default class BedrifterScreen extends Component {
             Läs mer om Stockholms Stads hållbarhetsarbete
           </Text>
         </View>
-      
+
       </View>
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
