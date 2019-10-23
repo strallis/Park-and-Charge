@@ -1,8 +1,19 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import HeaderComponent from '../components/HeaderComponent';
 
 export default class WaitingScreen extends Component {
+  static navigationOptions = {
+    // headerTitle instead of title
+    headerTitle: () => <HeaderComponent  />,
+  };
+
+  // static navigationOptions = {
+  //   // headerTitle instead of title
+  //   headerTitle: "Bedrifter"
+  //   header: props => <HeaderComponent option='Bedri'  />,
+  // };
   render() {
     return (
       <View style={styles.container}>
@@ -66,6 +77,25 @@ const styles = StyleSheet.create({
     fontFamily: "atm-font",
     letterSpacing: 0,
     textAlign: "center"
+  },
+  containerHeader: {
+    width: 375,
+    height: 120
+  },
+  rectHeader: {
+    width: 375,
+    height: 120,
+    backgroundColor: "rgba(255,179,0,1)"
+  },
+  textHeader: {
+    width: 132,
+    height: 38,
+    color: "#121212",
+    fontSize: 34,
+    fontFamily: "atm-font",
+    letterSpacing: 0,
+    marginTop: 60,
+    marginLeft: 121
   },
 
 });
