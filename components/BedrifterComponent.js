@@ -11,6 +11,12 @@ import * as Font from 'expo-font';
 import Colors from '../constants/Colors';
 
 export default function BedrifterComponent(props) {
+  
+  navigationOptions = {
+    headerTitle:"Bedrifter",
+    headerTitle: () => <HeaderComponent  title = {'Bedrifter'}/>,
+  };
+
   return (
 
     <View style={styles.container}>

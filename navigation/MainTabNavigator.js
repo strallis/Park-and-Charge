@@ -28,7 +28,7 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Home: SettingsScreen,
+    Home: BedrifterScreen,
   },
   config
 );
