@@ -4,16 +4,13 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import HeaderComponent from '../components/HeaderComponent';
 
 export default class WaitingScreen extends Component {
+
   static navigationOptions = {
-    // headerTitle instead of title
-    headerTitle: () => <HeaderComponent  />,
+    headerTitle:"Bedrifter",
+    headerTitle: () => <HeaderComponent  title = {'Bedrifter'}/>,
   };
 
-  // static navigationOptions = {
-  //   // headerTitle instead of title
-  //   headerTitle: "Bedrifter"
-  //   header: props => <HeaderComponent option='Bedri'  />,
-  // };
+
   render() {
     return (
       <View style={styles.container}>
