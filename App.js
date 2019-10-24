@@ -77,3 +77,5 @@ navBarPark: {
   height: 112
 },
 });
+
+module.exports = App

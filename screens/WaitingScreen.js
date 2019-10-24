@@ -3,12 +3,28 @@ import { StyleSheet, View, Text, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import HeaderComponent from '../components/HeaderComponent';
 
+const FIVE_SECONDS = 3000;
+
+
 export default class WaitingScreen extends Component {
 
-  static navigationOptions = {
-    headerTitle:"Bedrifter",
-    headerTitle: () => <HeaderComponent  title = {'Bedrifter'}/>,
-  };
+  // static navigationOptions = {
+  //   headerTitle:"Bedrifter",
+  //   headerTitle: () => <HeaderComponent  title = {'Bedrifter'}/>,
+  // };
+
+
+componentDidMount() {
+      // When mounted, wait one second, then navigate to App
+      setTimeout(() => {
+        // Components that are placed inside a React Navigation
+        // navigator will receive the `navigation` prop.
+        // It's main usage is to trigger navigation events.
+        // Right here we're telling it to navigate to the route
+        // with the name 'App'.
+        this.props.navigation.navigate('Main');
+      }, FIVE_SECONDS);
+    }
 
 
   render() {
