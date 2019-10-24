@@ -4,21 +4,27 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import HeaderComponent from '../components/HeaderComponent';
 import Constants from 'expo-constants';
 
-const FIVE_SECONDS = 2000;
+const FIVE_SECONDS = 3500;
 
 
 export default class WaitingScreen extends Component {
 
   static navigationOptions = {
-    headerTitle:"Bedrifter",
+    headerTitle: "Bedrifter",
     headerTitle: () => <HeaderComponent  title = {'Bedrifter'}/>,
   };
 
   render() {
     return (
 
+        <View>
+
+      <View style={styles.dummyHeader}>
+
+        </View>
 
         <ScrollView style={styles.container}>
+
 
         <View style={styles.upperHalfContainer}>
 
@@ -30,9 +36,87 @@ export default class WaitingScreen extends Component {
 
         </View>
 
+        <View style={styles.rect7}>
+          <View
+            style={[
+              styles.row,
+              {
+                marginRight: 42,
+                marginLeft: 22,
+                marginTop: 22,
+                height: 69
+              }
+            ]}
+          >
+            <Image
+              source={require("../assets/images/planet-earth1.png")}
+              resizeMode="contain"
+              style={styles.image}
+            />
+            <Text style={styles.text10}>
+              Du har sparat jorden ca 1,5 ton CO2-utsläpp vilket motsvarar
+              ett års köttkonsumtion
+            </Text>
+          </View>
+        </View>
+
+
+        <View style={styles.rect8}>
+          <View
+            style={[
+              styles.stack,
+              {
+                marginTop: 30,
+                marginLeft: 20,
+                height: 75,
+                width: 353
+              }
+            ]}
+          >
+            <Text style={styles.text11}>
+              Du har tjänat 666 kr genom att hyra ut din parkeringsplats
+            </Text>
+            <Image
+              source={require("../assets/images/coins1.png")}
+              resizeMode="contain"
+              style={styles.image2}
+            />
+          </View>
+        </View>
+
+
+        <View style={styles.rect9}>
+
+          <View
+            style={[
+              styles.row,
+              {
+                marginRight: 40,
+                marginLeft: 20,
+                marginTop: 23,
+                height: 81,
+                flex: 1
+              }
+            ]}
+          >
+            <Image
+              source={require("../assets/images/charity1.png")}
+              resizeMode="contain"
+              style={styles.image3}
+            />
+            <Text style={styles.text12}>
+              Du har hjälpt 37 elbilsägare i jakten på en laddningsplats!
+            </Text>
+          </View>
+
+        </View>
+
+
+
 
 
         </ScrollView>
+          </View>
 
 
     );
@@ -44,9 +128,13 @@ export default class WaitingScreen extends Component {
 
 
 const styles = StyleSheet.create({
+  dummyHeader: {
+    width: "100%",
+    height: '5%',
+  },
 
   container: {
-      backgroundColor: '#F7F9F9',
+      backgroundColor: 'white',
       height: '100%',
       width: '100%',
       flexDirection: 'column',
@@ -72,7 +160,8 @@ const styles = StyleSheet.create({
 
 
 stack: {
-  position: "relative"
+  position: "relative",
+  width: "100%"
 },
 icon5: {
   flex:1,
@@ -81,8 +170,7 @@ icon5: {
 },
 rect7: {
   top: 0,
-  left: 2,
-  width: 419,
+  width: "100%",
   height: 116,
   backgroundColor: "rgba(255,255,255,1)",
   position: "absolute",
@@ -109,19 +197,17 @@ text10: {
 },
 rect8: {
   top: 115,
-  left: 0,
-  width: 419,
+  width: "100%",
   height: 116,
   backgroundColor: "rgba(255,255,255,1)",
   position: "absolute",
   opacity: 0.7,
   borderColor: "rgba(155,155,155,1)",
-  borderWidth: 10,
   borderTopWidth: 0,
   borderBottomWidth: 1
 },
 text11: {
-  top: 7,
+  top: 5,
   left: 76,
   width: 277,
   height: 68,
@@ -146,7 +232,6 @@ rect9: {
   position: "absolute",
   opacity: 0.7,
   borderColor: "rgba(155,155,155,1)",
-  borderWidth: 10,
   borderTopWidth: 0,
   borderBottomWidth: 1,
   flexDirection: "row"
