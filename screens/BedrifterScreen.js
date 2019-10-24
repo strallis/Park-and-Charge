@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, StatusBar, ScrollView, SafeAreaView } from "react-native";
+import { StyleSheet, View, Text, StatusBar, ScrollView, SafeAreaView, Image } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import HeaderComponent from '../components/HeaderComponent';
 import Constants from 'expo-constants';
@@ -17,19 +17,23 @@ export default class WaitingScreen extends Component {
   render() {
     return (
 
-      <SafeAreaView style={styles.container}>
-        <ScrollView style={styles.scrollView}>
-          <Text style={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Text>
+
+        <ScrollView style={styles.container}>
+
+        <View style={styles.upperHalfContainer}>
+
+        </View>
+
+        <View style={styles.lowerHalfContainer}>
+
+          <Icon name="recycle" style={styles.icon5} />
+
+        </View>
+
+
+
         </ScrollView>
-      </SafeAreaView>
+
 
     );
 
@@ -38,16 +42,165 @@ export default class WaitingScreen extends Component {
   }
 }
 
+
 const styles = StyleSheet.create({
+
   container: {
-    flex: 1,
-    marginTop: Constants.statusBarHeight,
-  },
-  scrollView: {
-    backgroundColor: 'pink',
-    marginHorizontal: 20,
-  },
+      backgroundColor: '#F7F9F9',
+      height: '100%',
+      width: '100%',
+      flexDirection: 'column',
+      //justifyContent: 'center'
+    },
   text: {
     fontSize: 42,
   },
+
+  upperHalfContainer: {
+    height: '20%',
+    width: '100%',
+    alignItems: 'center',
+    //justifyContent: 'space-around',
+    padding: 10
+  },
+  lowerHalfContainer: {
+    height: '40%',
+    width: '100%',
+    //justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+
+
+stack: {
+  position: "relative"
+},
+icon5: {
+  flex:1,
+  color: "rgba(0,0,0,1)",
+  fontSize: 300
+},
+rect7: {
+  top: 0,
+  left: 2,
+  width: 419,
+  height: 116,
+  backgroundColor: "rgba(255,255,255,1)",
+  position: "absolute",
+  opacity: 0.7,
+  borderColor: "rgba(155,155,155,1)",
+  borderWidth: 1,
+  flexDirection: "row"
+},
+row: {
+  flexDirection: "row"
+},
+image: {
+  width: 58,
+  height: 63
+},
+text10: {
+  width: 275,
+  height: 68,
+  color: "#121212",
+  fontSize: 18,
+  fontFamily: "montserrat-font",
+  marginLeft: 8,
+  marginTop: 1
+},
+rect8: {
+  top: 115,
+  left: 0,
+  width: 419,
+  height: 116,
+  backgroundColor: "rgba(255,255,255,1)",
+  position: "absolute",
+  opacity: 0.7,
+  borderColor: "rgba(155,155,155,1)",
+  borderWidth: 10,
+  borderTopWidth: 0,
+  borderBottomWidth: 1
+},
+text11: {
+  top: 7,
+  left: 76,
+  width: 277,
+  height: 68,
+  color: "#121212",
+  position: "absolute",
+  fontSize: 18,
+  fontFamily: "montserrat-font"
+},
+image2: {
+  top: 0,
+  left: 0,
+  width: 80,
+  height: 56,
+  position: "absolute"
+},
+rect9: {
+  top: 231,
+  left: 0,
+  width: 419,
+  height: 116,
+  backgroundColor: "rgba(255,255,255,1)",
+  position: "absolute",
+  opacity: 0.7,
+  borderColor: "rgba(155,155,155,1)",
+  borderWidth: 10,
+  borderTopWidth: 0,
+  borderBottomWidth: 1,
+  flexDirection: "row"
+},
+image3: {
+  width: 69,
+  height: 70
+},
+text12: {
+  width: 277,
+  height: 68,
+  color: "#121212",
+  fontSize: 18,
+  fontFamily: "montserrat-font",
+  marginLeft: 1,
+  marginTop: 13
+},
+rect: {
+  top: 0,
+  left: 22,
+  width: 375,
+  height: 122,
+  backgroundColor: "rgba(66,245,170,1)",
+  position: "absolute"
+},
+text: {
+  width: 223,
+  height: 38,
+  color: "#121212",
+  fontSize: 30,
+  fontFamily: "montserrat-font",
+  letterSpacing: 0,
+  marginTop: 61,
+  marginLeft: 78
+},
+rect10: {
+  width: 284,
+  height: 59,
+  backgroundColor: "rgba(255,255,255,1)",
+  opacity: 0.7,
+  borderRadius: 100,
+  borderColor: "#000000",
+  borderWidth: 1,
+  marginTop: 74,
+  marginLeft: 44
+},
+text13: {
+  width: 244,
+  height: 47,
+  color: "#121212",
+  fontSize: 19,
+  fontFamily: "montserrat-font",
+  textAlign: "center",
+  marginTop: 6,
+  marginLeft: 22
+}
 });
