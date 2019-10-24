@@ -19,11 +19,11 @@ export default class HeaderComponent extends Component {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: 120
+    height: 115,
   },
   rect: {
     width: "100%",
-    height: 120,
+    height: "100%",
     backgroundColor: "rgba(255,179,0,1)"
   },
   text: {
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     fontSize: 34,
     fontFamily: "atm-font",
     letterSpacing: 0,
-    marginTop: 60,
+    marginTop: 45,
     marginLeft: 121
   }
 });
