@@ -10,8 +10,6 @@ import SettingsScreen from '../screens/SettingsScreen';
 import BedrifterScreen from '../screens/BedrifterScreen';
 import WaitingScreen from '../screens/WaitingScreen';
 import ProfilScreen from '../screens/ProfilScreen';
-import ParkScreen from '../screens/ParkScreen';
-
 
 
 
@@ -31,7 +29,7 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Home: ParkScreen,
+    Home: BedrifterScreen,
   },
   config
 );
@@ -39,7 +37,7 @@ const HomeStack = createStackNavigator(
 HomeStack.navigationOptions = {
   tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
-    <ParkeraComponent
+    <BedrifterComponent
       focused={focused} />
   ),
 };
@@ -50,14 +48,14 @@ HomeStack.path = '';
 
 
 
-const HyrUtStack = createStackNavigator(
+const LinksStack = createStackNavigator(
   {
     Links: LinksScreen,
   },
   config
 );
 
-HyrUtStack.navigationOptions = {
+LinksStack.navigationOptions = {
   tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
     <HyrUtComponent
@@ -65,7 +63,7 @@ HyrUtStack.navigationOptions = {
   ),
 };
 
-HyrUtStack.path = '';
+LinksStack.path = '';
 
 
 
@@ -94,22 +92,22 @@ ProfilStack.path = '';
 
 
 
-const BedrifterStack = createStackNavigator(
+const SettingsStack = createStackNavigator(
   {
-    Settings: BedrifterScreen,
+    Settings: SettingsScreen,
   },
   config
 );
 
-BedrifterStack.navigationOptions = {
+SettingsStack.navigationOptions = {
   tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
-    <BedrifterComponent
+    <ParkeraComponent
       focused={focused} />
   ),
 };
 
-BedrifterStack.path = '';
+SettingsStack.path = '';
 
 bottomNavigatorConfigs = {
    initialRouteName: "HomeStack",
@@ -128,8 +126,8 @@ bottomNavigatorConfigs = {
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  HyrUtStack,
-  BedrifterStack,
+  LinksStack,
+  SettingsStack,
   ProfilStack,
 
 },
