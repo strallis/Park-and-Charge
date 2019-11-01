@@ -1,4 +1,4 @@
-# ParkME
+# ParkShark
 A React Native prototype for a project aimed at sharing private electric vehicle charging stations in Stockholm.
 
 ## Status
