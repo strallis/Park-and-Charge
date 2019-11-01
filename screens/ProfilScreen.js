@@ -1,290 +1,333 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, StatusBar, ScrollView, SafeAreaView, Image } from "react-native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import HeaderComponent from '../components/HeaderComponent';
-import Constants from 'expo-constants';
+import React, { Component} from "react";
+import {
+  StyleSheet,
+  View,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  ScrollView
+} from "react-native";
+import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
 
-
-export default class ProfilScreen extends Component {
-
+export default class ProfilePage extends Component {
   static navigationOptions = {
-    headerTitle: "Profil",
-    headerTitle: () => <HeaderComponent  title = {'Profil'}/>,
-  };
+    //To hide the ActionBar/NavigationBar
+    header: null,
+};
 
   render() {
     return (
+      <View style={styles.container}>
 
-        <View>
-
-      <View style={styles.dummyHeader}>
-
-        </View>
-
-        <ScrollView style={styles.container}>
+              <StatusBar animated={false} barStyle="dark-content" hidden={false} />
 
 
-        <View style={styles.upperHalfContainer}>
+              <View style={styles.rect2}>
+                <View style={styles.icon9Stack}>
+                  <MaterialCommunityIconsIcon
+                    name="account-circle"
+                    style={styles.icon9}
+                  />
+                  <Text style={styles.text}>Profil</Text>
+                  <Text style={styles.text2}>Henrik Blomgren</Text>
+                </View>
+              </View>
 
-        </View>
 
-        <View style={styles.lowerHalfContainer}>
+                <ScrollView style={styles.container}>
+            <View style={styles.buttonStack}>
+                <TouchableOpacity style={styles.button}>
+                  <Text style={styles.text3}>Personligt</Text>
+                </TouchableOpacity>
 
-          <Icon name="recycle" style={styles.icon5} />
+                <MaterialCommunityIconsIcon
+                  name="arrow-right"
+                  style={styles.icon10}
+                />
+            </View>
 
-        </View>
+            <View style={styles.rect4Stack}>
+              <View style={styles.rect4}>
+                <Text style={styles.text4}>Betalningar</Text>
+              </View>
+              <MaterialCommunityIconsIcon
+                name="arrow-right"
+                style={styles.icon11}
+              />
+            </View>
 
-        <View style={styles.rect7}>
-          <View
-            style={[
-              styles.row,
-              {
-                marginRight: 42,
-                marginLeft: 22,
-                marginTop: 22,
-                height: 69
-              }
-            ]}
-          >
-            <Image
-              source={require("../assets/images/planet-earth1.png")}
-              resizeMode="contain"
-              style={styles.image}
-            />
-            <Text style={styles.text10}>
-              Du har sparat jorden ca 1,5 ton CO2-utsläpp vilket motsvarar
-              ett års köttkonsumtion
-            </Text>
+
+        <View style={styles.rect5Stack}>
+          <View style={styles.rect5}>
+            <Text style={styles.text5}>Parkeringshistorik</Text>
           </View>
+          <MaterialCommunityIconsIcon
+            name="arrow-right"
+            style={styles.icon12}
+          />
         </View>
 
 
-        <View style={styles.rect8}>
-          <View
-            style={[
-              styles.stack,
-              {
-                marginTop: 30,
-                marginLeft: 20,
-                height: 75,
-                width: 353
-              }
-            ]}
-          >
-            <Text style={styles.text11}>
-              Du har tjänat 666 kr genom att hyra ut din parkeringsplats
-            </Text>
-            <Image
-              source={require("../assets/images/coins1.png")}
-              resizeMode="contain"
-              style={styles.image2}
-            />
+        <View style={styles.rect6Stack}>
+          <View style={styles.rect6}>
+            <Text style={styles.text11}>FAQ</Text>
           </View>
+          <MaterialCommunityIconsIcon
+            name="arrow-right"
+            style={styles.icon13}
+          />
         </View>
 
 
-        <View style={styles.rect9}>
-
-          <View
-            style={[
-              styles.row,
-              {
-                marginRight: 40,
-                marginLeft: 20,
-                marginTop: 23,
-                height: 81,
-                flex: 1
-              }
-            ]}
-          >
-            <Image
-              source={require("../assets/images/charity1.png")}
-              resizeMode="contain"
-              style={styles.image3}
-            />
-            <Text style={styles.text12}>
-              Du har hjälpt 37 elbilsägare i jakten på en laddningsplats!
-            </Text>
+        <View style={styles.rect7Stack}>
+          <View style={styles.rect7}>
+            <Text style={styles.text12}>Bjud in en vän</Text>
           </View>
-
+          <MaterialCommunityIconsIcon
+            name="arrow-right"
+            style={styles.icon16}
+          />
         </View>
 
 
-
-
-
-        </ScrollView>
-          </View>
-
+      </ScrollView>
+      </View>
 
     );
-
-
-
   }
 }
 
-
 const styles = StyleSheet.create({
-  dummyHeader: {
-    width: "100%",
-    height: '5%',
-  },
-
   container: {
-      backgroundColor: 'white',
-      height: '100%',
-      width: '100%',
-      flexDirection: 'column',
-      //justifyContent: 'center'
-    },
+    flex: 1,
+    backgroundColor: "rgba(255,255,255,1)"//"rgba(230, 230, 230,1)"
+  },
+  rect2: {
+    width: 375,
+    height: 282,
+    backgroundColor: "rgba(242,178,0,1)",
+    opacity: 1,
+    marginLeft: -1
+  },
+  icon9: {
+    top: 36,
+    left: 89,
+    position: "absolute",
+    color: "rgba(255,255,255,1)",
+    fontSize: 135,
+    height: 135,
+    width: 135
+  },
   text: {
-    fontSize: 42,
+    top: 0,
+    left: 107,
+    color: "#121212",
+    position: "absolute",
+    fontSize: 36,
+    fontFamily: "montserrat-font", //"atm-font",
+    letterSpacing: 0
   },
-
-  upperHalfContainer: {
-    height: '20%',
-    width: '100%',
-    alignItems: 'center',
-    //justifyContent: 'space-around',
-    padding: 10
+  text2: {
+    top: 170,
+    color: "#121212",
+    position: "absolute",
+    fontSize: 34,
+    fontFamily: "montserrat-font",
+    letterSpacing: 0,
+    marginLeft: 5,
+    textAlign: "center",
+    left: 0
   },
-  lowerHalfContainer: {
-    height: '40%',
-    width: '100%',
-    //justifyContent: 'space-around',
-    alignItems: 'center'
+  icon9Stack: {
+    width: 313,
+    height: 206,
+    marginTop: 47,
+    marginLeft: 32
   },
-
-
-stack: {
-  position: "relative",
-  width: "100%"
-},
-icon5: {
-  flex:1,
-  color: "rgba(0,0,0,1)",
-  fontSize: 300
-},
-rect7: {
-  top: 0,
-  width: "100%",
-  height: 116,
-  backgroundColor: "rgba(255,255,255,1)",
-  position: "absolute",
-  opacity: 0.7,
-  borderColor: "rgba(155,155,155,1)",
-  borderWidth: 1,
-  flexDirection: "row"
-},
-row: {
-  flexDirection: "row"
-},
-image: {
-  width: 58,
-  height: 63
-},
-text10: {
-  width: 275,
-  height: 68,
-  color: "#121212",
-  fontSize: 18,
-  fontFamily: "montserrat-font",
-  marginLeft: 8,
-  marginTop: 1
-},
-rect8: {
-  top: 115,
-  width: "100%",
-  height: 116,
-  backgroundColor: "rgba(255,255,255,1)",
-  position: "absolute",
-  opacity: 0.7,
-  borderColor: "rgba(155,155,155,1)",
-  borderTopWidth: 0,
-  borderBottomWidth: 1
-},
-text11: {
-  top: 5,
-  left: 76,
-  width: 277,
-  height: 68,
-  color: "#121212",
-  position: "absolute",
-  fontSize: 18,
-  fontFamily: "montserrat-font"
-},
-image2: {
-  top: 0,
-  left: 0,
-  width: 80,
-  height: 56,
-  position: "absolute"
-},
-rect9: {
-  top: 231,
-  left: 0,
-  width: 419,
-  height: 116,
-  backgroundColor: "rgba(255,255,255,1)",
-  position: "absolute",
-  opacity: 0.7,
-  borderColor: "rgba(155,155,155,1)",
-  borderTopWidth: 0,
-  borderBottomWidth: 1,
-  flexDirection: "row"
-},
-image3: {
-  width: 69,
-  height: 70
-},
-text12: {
-  width: 277,
-  height: 68,
-  color: "#121212",
-  fontSize: 18,
-  fontFamily: "montserrat-font",
-  marginLeft: 1,
-  marginTop: 13
-},
-rect: {
-  top: 0,
-  left: 22,
-  width: 375,
-  height: 122,
-  backgroundColor: "rgba(66,245,170,1)",
-  position: "absolute"
-},
-text: {
-  width: 223,
-  height: 38,
-  color: "#121212",
-  fontSize: 30,
-  fontFamily: "montserrat-font",
-  letterSpacing: 0,
-  marginTop: 61,
-  marginLeft: 78
-},
-rect10: {
-  width: 284,
-  height: 59,
-  backgroundColor: "rgba(255,255,255,1)",
-  opacity: 0.7,
-  borderRadius: 100,
-  borderColor: "#000000",
-  borderWidth: 1,
-  marginTop: 74,
-  marginLeft: 44
-},
-text13: {
-  width: 244,
-  height: 47,
-  color: "#121212",
-  fontSize: 19,
-  fontFamily: "montserrat-font",
-  textAlign: "center",
-  marginTop: 6,
-  marginLeft: 22
-}
+  button: {
+    top: 0,
+    left: 0,
+    width: 330,
+    height: 52,
+    backgroundColor: "rgba(255,255,255,1)",
+    position: "absolute",
+    opacity: 0.7,
+    borderRadius: 100,
+    borderColor: "#000000",
+    borderWidth: 1
+  },
+  text3: {
+    color: "#121212",
+    fontSize: 24,
+    fontFamily: "montserrat-font",
+    letterSpacing: 0,
+    marginTop: 15,
+    marginLeft: 21
+  },
+  icon10: {
+    top: 5,
+    left: 275,
+    position: "absolute",
+    color: "rgba(0,0,0,1)",
+    fontSize: 48
+  },
+  buttonStack: {
+    width: 330,
+    height: 53,
+    marginTop: 16,
+    marginLeft: 21
+  },
+  rect4: {
+    top: 0,
+    left: 0,
+    width: 330,
+    height: 52,
+    backgroundColor: "rgba(255,255,255,1)",
+    position: "absolute",
+    opacity: 0.7,
+    borderRadius: 100,
+    borderColor: "#000000",
+    borderWidth: 1
+  },
+  text4: {
+    color: "#121212",
+    fontSize: 24,
+    fontFamily: "montserrat-font",
+    letterSpacing: 0,
+    marginTop: 15,
+    marginLeft: 22
+  },
+  icon11: {
+    top: 3,
+    left: 276,
+    position: "absolute",
+    color: "rgba(0,0,0,1)",
+    fontSize: 48
+  },
+  rect4Stack: {
+    width: 331,
+    height: 52,
+    marginTop: 11,
+    marginLeft: 23
+  },
+  rect5: {
+    top: 0,
+    left: 0,
+    width: 330,
+    height: 52,
+    backgroundColor: "rgba(255,255,255,1)",
+    position: "absolute",
+    opacity: 0.7,
+    borderRadius: 100,
+    borderColor: "#000000",
+    borderWidth: 1
+  },
+  text5: {
+    color: "#121212",
+    fontSize: 24,
+    fontFamily: "montserrat-font",
+    letterSpacing: 0,
+    marginTop: 14,
+    marginLeft: 26
+  },
+  icon12: {
+    top: 4,
+    left: 276,
+    position: "absolute",
+    color: "rgba(0,0,0,1)",
+    fontSize: 48
+  },
+  rect5Stack: {
+    width: 331,
+    height: 52,
+    marginTop: 14,
+    marginLeft: 23
+  },
+  rect6: {
+    top: 0,
+    left: 0,
+    width: 330,
+    height: 52,
+    backgroundColor: "rgba(255,255,255,1)",
+    position: "absolute",
+    opacity: 0.7,
+    borderRadius: 100,
+    borderColor: "#000000",
+    borderWidth: 1
+  },
+  text11: {
+    color: "#121212",
+    fontSize: 24,
+    fontFamily: "montserrat-font",
+    letterSpacing: 0,
+    marginTop: 14,
+    marginLeft: 24
+  },
+  icon13: {
+    top: 4,
+    left: 278,
+    position: "absolute",
+    color: "rgba(0,0,0,1)",
+    fontSize: 48
+  },
+  rect6Stack: {
+    width: 333,
+    height: 52,
+    marginTop: 17,
+    marginLeft: 21
+  },
+  rect7: {
+    top: 0,
+    left: 0,
+    width: 330,
+    height: 52,
+    backgroundColor: "rgba(255,255,255,1)",
+    position: "absolute",
+    opacity: 0.7,
+    borderRadius: 100,
+    borderColor: "#000000",
+    borderWidth: 1
+  },
+  text12: {
+    color: "#121212",
+    fontSize: 24,
+    fontFamily: "montserrat-font",
+    letterSpacing: 0,
+    marginTop: 15,
+    marginLeft: 27
+  },
+  icon16: {
+    top: 2,
+    left: 278,
+    position: "absolute",
+    color: "rgba(0,0,0,1)",
+    fontSize: 48
+  },
+  rect7Stack: {
+    width: 333,
+    height: 52,
+    marginTop: 10,
+    marginLeft: 21
+  },
+  icon17: {
+    color: "rgba(0,0,0,1)",
+    fontSize: 48,
+    marginTop: 15,
+    marginLeft: 295
+  },
+  navBarProfile: {
+    width: 375,
+    height: 112,
+    backgroundColor: "rgba(230, 230, 230,1)",
+    opacity: 1,
+    marginTop: 26
+  },
+  icon15: {
+    color: "rgba(66,245,170,1)",
+    fontSize: 300,
+    opacity: 0.7,
+    marginTop: 22,
+    marginLeft: 269
+  }
 });

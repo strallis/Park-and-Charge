@@ -23,18 +23,14 @@ const styles = StyleSheet.create({
     height: 115,
   },
   rect: {
-    width: "100%",
-    height: "100%",
+    flex: 1,
     backgroundColor: "rgba(255,179,0,1)"
   },
   text: {
-    width: 132,
-    height: 38,
     color: "#121212",
     fontSize: 34,
     fontFamily: "atm-font",
-    letterSpacing: 0,
     marginTop: 45,
-    marginLeft: 121
+    alignSelf: "center",
   }
 });

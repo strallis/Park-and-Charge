@@ -5,6 +5,8 @@ import MainTabNavigator from './MainTabNavigator';
 import WaitingScreen from '../screens/WaitingScreen';
 
 
+
+
 const AppNavigator = createSwitchNavigator({
   //App: App,
   Main: MainTabNavigator,

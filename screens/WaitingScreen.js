@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import HeaderComponent from '../components/HeaderComponent';
 
-const FIVE_SECONDS = 1000;
+const FIVE_SECONDS = 500;
 
 
 export default class WaitingScreen extends Component {

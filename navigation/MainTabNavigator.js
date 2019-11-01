@@ -9,6 +9,7 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import BedrifterScreen from '../screens/BedrifterScreen';
 import WaitingScreen from '../screens/WaitingScreen';
+import ProfilScreen from '../screens/ProfilScreen';
 
 
 
@@ -71,7 +72,7 @@ LinksStack.path = '';
 
 const ProfilStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Links: ProfilScreen,
   },
   config
 );
