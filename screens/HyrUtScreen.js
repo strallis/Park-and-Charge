@@ -40,7 +40,7 @@ export default class HyrUtScreen extends Component {
 
 
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate("Untitled12")}
+          onPress={() => this.navigateParkeringsAlternativ()}
           style={styles.button}
         >
           <View style={styles.text9StackRow}>
@@ -71,7 +71,7 @@ export default class HyrUtScreen extends Component {
           </TouchableOpacity>
 
 
-          <TouchableOpacity style={styles.icon6Row} onPress={() => this.navigateParkeringsAlternativ()}>
+          <TouchableOpacity style={styles.icon6Row} >
             <MaterialCommunityIconsIcon name="plus-circle" style={styles.icon6} />
             <PlusButtonComponent style={styles.materialBasicFooter4} />
           </TouchableOpacity>
