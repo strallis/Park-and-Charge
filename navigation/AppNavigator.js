@@ -17,28 +17,3 @@ const AppNavigator = createSwitchNavigator({
 });
 
 export default createAppContainer(AppNavigator);
-
-
-//
-// export default createAppContainer(
-//   createSwitchNavigator(
-//     {
-//       Loading: WaitingScreen,
-//       Main: MainTabNavigator
-//     },
-//     {
-//       initialRouteName: 'Loading'
-//     }
-//   )
-// )
-
-//
-// const MainNavigation = createStackNavigator(
-//   {
-//     MainNavigation: { screen: MainTabNavigator },
-//   }
-// )
-//
-// const MainApp = createAppContainer(MainNavigation)
-//
-// export default MainApp

@@ -33,7 +33,7 @@ export default class ParkHeaderComponent extends Component {
 const styles = StyleSheet.create({
   rect4: {
     width: "100%",
-    height: 124,
+    height: 115,
     backgroundColor: "rgba(255,179,0,1)",
     flexDirection: "row",
   },
@@ -43,14 +43,14 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 89,
     marginLeft: 89,
-    marginTop: 53
+    marginTop: 45
   },
   text4: {
     color: "#121212",
     fontSize: 34,
     fontFamily: 'atm-font',
     letterSpacing: 0,
-    marginTop: 10
+    marginTop: 0
   },
   icon2: {
     color: "rgba(0,0,0,1)",
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     marginLeft: 1,
-    marginTop: 10
+    marginTop: 0
   }
 
 

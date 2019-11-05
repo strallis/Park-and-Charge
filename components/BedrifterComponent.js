@@ -11,7 +11,7 @@ import * as Font from 'expo-font';
 import Colors from '../constants/Colors';
 
 export default function BedrifterComponent(props) {
-  
+
   navigationOptions = {
     headerTitle:"Bedrifter",
     headerTitle: () => <HeaderComponent  title = {'Bedrifter'}/>,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   btn1TextLight: {
     color: "rgba(128,128,128,1)",
     opacity: 0.8,
-    fontFamily: "atm-font"
+    fontFamily: "montserrat-font"
   },
   btn1TextDark: {
     color: "rgba(0,0,0,1)",

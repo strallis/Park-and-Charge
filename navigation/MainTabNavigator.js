@@ -11,10 +11,8 @@ import BedrifterScreen from '../screens/BedrifterScreen';
 import WaitingScreen from '../screens/WaitingScreen';
 import ProfilScreen from '../screens/ProfilScreen';
 import ParkScreen from '../screens/ParkScreen';
-
-
-
-
+import HyrUtScreen from '../screens/HyrUtScreen';
+import ParkeringsAlternativScreen from '../screens/ParkeringsAlternativScreen';
 
 import BedrifterComponent from '../components/BedrifterComponent';
 import HyrUtComponent from '../components/HyrUtComponent';
@@ -23,6 +21,7 @@ import ProfilComponent from '../components/ProfilComponent';
 
 
 
+import HeaderComponentParkeringsAlternativ from '../components/HeaderComponentParkeringsAlternativ';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -31,7 +30,7 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Home: ParkScreen,
+    Home: {screen: ParkScreen},// ParkScreen
   },
   config
 );
@@ -51,19 +50,28 @@ HomeStack.path = '';
 
 
 const HyrUtStack = createStackNavigator(
+
   {
-    Links: LinksScreen,
+    Uthyrningar: {screen: HyrUtScreen},// ParkScreen
+    ParkeringsAlternativ: {screen: ParkeringsAlternativScreen,
+      navigationOptions: {
+              headerLeft: null,
+              headerTitle:<HeaderComponentParkeringsAlternativ/>,
+          },
+        },// ParkScreen
   },
   config
 );
 
 HyrUtStack.navigationOptions = {
   tabBarLabel: ' ',
+  //tabBarVisible = false,
   tabBarIcon: ({ focused }) => (
     <HyrUtComponent
       focused={focused} />
   ),
 };
+
 
 HyrUtStack.path = '';
 

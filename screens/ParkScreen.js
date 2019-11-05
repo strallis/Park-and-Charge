@@ -12,26 +12,14 @@ import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommun
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 import ParkHeaderComponent from '../components/ParkHeaderComponent';
 
+
 export default class ParkScreen extends Component {
 
   static navigationOptions = {
     // headerTitle instead of title
     headerTitle: () => <ParkHeaderComponent />,
   };
-  // <View style={styles.rect}>
-  //
-  //   <View style={styles.textRow}>
-  //     <Text style={styles.text}>Var vill du parkera?</Text>
-  //     <EvilIconsIcon name="search" style={styles.icon} />
-  //   </View>
-  // </View>
-  //
-  // <View style={styles.rect3}>
-  //   <Text style={styles.textKnappar}>Logga in</Text>
-  // </View>
-  // <View style={styles.rect2}>
-  //   <Text style={styles.textKnappar}>Skapa konto</Text>
-  // </View>
+
 
   render() {
     return (
