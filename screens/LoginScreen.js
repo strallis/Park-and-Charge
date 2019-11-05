@@ -6,20 +6,34 @@ import {
   ImageBackground,
   Text,
   StatusBar,
-  ScrollView
+  ScrollView,
+  TouchableOpacity
 } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 import ParkHeaderComponent from '../components/ParkHeaderComponent';
 
 
-export default class ParkScreen extends Component {
+export default class LoginScreen extends Component {
 
-  // static navigationOptions = {
-  //   // headerTitle instead of title
-  //   headerTitle: () => <ParkHeaderComponent />,
-  // };
+  static navigationOptions = {
+    // headerTitle instead of title
+    headerTitle: () => <ParkHeaderComponent />,
+  };
+  constructor(props) {
+  super(props)
+  const { navigation } = this.props
+  // this.state = {
+  //   userName: navigation.state.params.username
+  // }
+}
 
+navigateParkera() {
+  const { navigation } = this.props
+  navigation.navigate('Parkera', {
+    gameID: 1
+  })
+}
 
   render() {
     return (
@@ -30,7 +44,7 @@ export default class ParkScreen extends Component {
           <View style={styles.rect}>
 
             <View style={styles.textRow}>
-              <Text style={styles.text}>Var vill du parkera?</Text>
+              <Text style={styles.text}>Var vill du parker?</Text>
               <EvilIconsIcon name="search" style={styles.icon} />
             </View>
           </View>
@@ -41,6 +55,12 @@ export default class ParkScreen extends Component {
 
 
 
+          <TouchableOpacity style={styles.rect3} onPress={() => this.navigateParkera()}>
+            <Text style={styles.textKnappar}>Logga in</Text>
+          </TouchableOpacity>
+          <View style={styles.rect2}>
+            <Text style={styles.textKnappar}>Skapa konto</Text>
+          </View>
 
 
 

@@ -4,13 +4,12 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+
 import BedrifterScreen from '../screens/BedrifterScreen';
 import WaitingScreen from '../screens/WaitingScreen';
 import ProfilScreen from '../screens/ProfilScreen';
 import ParkScreen from '../screens/ParkScreen';
+import LoginScreen from '../screens/LoginScreen';
 import HyrUtScreen from '../screens/HyrUtScreen';
 import ParkeringsAlternativScreen from '../screens/ParkeringsAlternativScreen';
 
@@ -18,6 +17,7 @@ import BedrifterComponent from '../components/BedrifterComponent';
 import HyrUtComponent from '../components/HyrUtComponent';
 import ParkeraComponent from '../components/ParkeraComponent';
 import ProfilComponent from '../components/ProfilComponent';
+import ParkHeaderComponent from '../components/ParkHeaderComponent';
 
 
 
@@ -30,17 +30,45 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Home: {screen: ParkScreen},// ParkScreen
+    Login: {screen: LoginScreen},// ParkScreen
+    Parkera: {screen: ParkScreen,
+      navigationOptions: {
+              headerLeft: null,
+              headerTitle:<ParkHeaderComponent/>,
+          },
+    },// ParkScreen
   },
   config
 );
 
-HomeStack.navigationOptions = {
-  tabBarLabel: ' ',
-  tabBarIcon: ({ focused }) => (
+// HomeStack.navigationOptions = {
+//   tabBarLabel: ' ',
+//   tabBarVisible: false,
+//   tabBarIcon: ({ focused }) => (
+//     <ParkeraComponent
+//       focused={focused} />
+//   ),
+// };
+
+
+HomeStack.navigationOptions = ({ navigation }) => {
+  const { routeName } = navigation.state.routes[navigation.state.index];
+  const navigationOptions = {};
+
+
+  if (routeName === 'Login') {
+    navigationOptions.tabBarVisible = false
+  }else{
+    navigationOptions.tabBarVisible = true
+  }
+
+  navigationOptions.tabBarLabel = ' '
+  navigationOptions.tabBarIcon = ({ focused }) => (
     <ParkeraComponent
       focused={focused} />
-  ),
+  )
+
+  return navigationOptions;
 };
 
 HomeStack.path = '';
@@ -52,20 +80,19 @@ HomeStack.path = '';
 const HyrUtStack = createStackNavigator(
 
   {
-    Uthyrningar: {screen: HyrUtScreen},// ParkScreen
+    Uthyrningar: {screen: HyrUtScreen},
     ParkeringsAlternativ: {screen: ParkeringsAlternativScreen,
       navigationOptions: {
               headerLeft: null,
               headerTitle:<HeaderComponentParkeringsAlternativ/>,
           },
-        },// ParkScreen
+        },
   },
   config
 );
 
 HyrUtStack.navigationOptions = {
   tabBarLabel: ' ',
-  //tabBarVisible = false,
   tabBarIcon: ({ focused }) => (
     <HyrUtComponent
       focused={focused} />
@@ -82,7 +109,7 @@ HyrUtStack.path = '';
 
 const ProfilStack = createStackNavigator(
   {
-    Links: ProfilScreen,
+    Profil: ProfilScreen,
   },
   config
 );
@@ -104,7 +131,7 @@ ProfilStack.path = '';
 
 const BedrifterStack = createStackNavigator(
   {
-    Settings: BedrifterScreen,
+    Bedrifter: BedrifterScreen,
   },
   config
 );

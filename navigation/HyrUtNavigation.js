@@ -14,7 +14,6 @@ const HyrUt = createStackNavigator(
         header: <HeaderComponentParkeringsAlternativ/>,
       }
 
-
     },
   },
 )
@@ -22,16 +21,3 @@ const HyrUt = createStackNavigator(
 const HyrUtApp = createAppContainer(HyrUt)
 
 export default HyrUtApp
-
-
-
-// static navigationOptions = {
-//   // headerTitle instead of title
-//   headerTitle: () => <HeaderComponentParkeringsAlternativ />,
-// };
-
-
-// static navigationOptions = {
-//   // headerTitle instead of title
-//   headerTitle: () => <HeaderComponentParkeringsAlternativ />,
-// };

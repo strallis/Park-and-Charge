@@ -48,9 +48,9 @@ export default class ProfilePage extends Component {
             </View>
 
             <View style={styles.rect4Stack}>
-              <View style={styles.rect4}>
+              <TouchableOpacity style={styles.rect4}>
                 <Text style={styles.text4}>Betalningar</Text>
-              </View>
+              </TouchableOpacity>
               <MaterialCommunityIconsIcon
                 name="arrow-right"
                 style={styles.icon11}
@@ -59,9 +59,9 @@ export default class ProfilePage extends Component {
 
 
         <View style={styles.rect5Stack}>
-          <View style={styles.rect5}>
+          <TouchableOpacity style={styles.rect5}>
             <Text style={styles.text5}>Parkeringshistorik</Text>
-          </View>
+          </TouchableOpacity>
           <MaterialCommunityIconsIcon
             name="arrow-right"
             style={styles.icon12}
@@ -70,9 +70,9 @@ export default class ProfilePage extends Component {
 
 
         <View style={styles.rect6Stack}>
-          <View style={styles.rect6}>
+          <TouchableOpacity style={styles.rect6}>
             <Text style={styles.text11}>FAQ</Text>
-          </View>
+          </TouchableOpacity>
           <MaterialCommunityIconsIcon
             name="arrow-right"
             style={styles.icon13}
@@ -81,9 +81,9 @@ export default class ProfilePage extends Component {
 
 
         <View style={styles.rect7Stack}>
-          <View style={styles.rect7}>
+          <TouchableOpacity style={styles.rect7}>
             <Text style={styles.text12}>Bjud in en vän</Text>
-          </View>
+          </TouchableOpacity>
           <MaterialCommunityIconsIcon
             name="arrow-right"
             style={styles.icon16}

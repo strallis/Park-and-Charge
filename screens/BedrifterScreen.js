@@ -111,10 +111,6 @@ export default class WaitingScreen extends Component {
 
         </View>
 
-
-
-
-
         </ScrollView>
           </View>
 

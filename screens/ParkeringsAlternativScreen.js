@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, StatusBar, Text,TouchableOpacity } from "react-native";
+import { StyleSheet, View, StatusBar, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import GoBackButton from '../components/GoBackButton';
 import HeaderComponentParkeringsAlternativ from '../components/HeaderComponentParkeringsAlternativ';
@@ -21,7 +21,9 @@ export default class ParkeringsAlternativScreen extends Component {
           <Text style={styles.text}>Adress</Text>
           <View style={styles.text2Row}>
             <Text style={styles.text2}>Fågelhundsgatan 18</Text>
+            <TouchableOpacity>
             <Text style={styles.text3}>Ändra</Text>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -33,6 +35,8 @@ export default class ParkeringsAlternativScreen extends Component {
               </View>
               <Text style={styles.text5}>3 SEK/Min</Text>
               <Text style={styles.text6}>Ändra</Text>
+
+
             </View>
           </View>
 
@@ -43,7 +47,9 @@ export default class ParkeringsAlternativScreen extends Component {
                 <Text style={styles.text7}>Tillgänglighet</Text>
                 <Text style={styles.text13}>Tillgänglig nu</Text>
               </View>
+              <TouchableOpacity>
               <Text style={styles.text9}>Ändra</Text>
+              </TouchableOpacity>
             </View>
           </View>
 
