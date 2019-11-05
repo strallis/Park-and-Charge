@@ -7,23 +7,9 @@ import HeaderComponentParkeringsAlternativ from '../components/HeaderComponentPa
 
 export default class ParkeringsAlternativScreen extends Component {
   static navigationOptions = {
-    // headerTitle instead of title
-    headerTitle: () => <HeaderComponentParkeringsAlternativ />,
+    headerTitle: () => <HeaderComponentParkeringsAlternativ navigation={this.props.navigation} />,
   };
-//   static navigationOptions = {
-//   title: 'Parkeringsalternativ',
-//   //headerTitle: <GoBackButton/>,
-//   headerLeft: <GoBackButton/>,//<HeaderBackButton onPress={() => navigation.goBack(null)} />
-//   headerTintColor: 'red',
-//   headerTitleStyle: { color: "#121212",
-//                       marginTop: 40,
-//                       fontSize: 34,
-//                       fontFamily: "atm-font",
-//                       letterSpacing: 0,
-//                       alignSelf: "center",
-//                       marginRight: 20,
-//                         }
-// };
+
 
   render() {
     return (

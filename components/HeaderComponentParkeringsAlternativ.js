@@ -1,25 +1,25 @@
-
-
-
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
-export default class HeaderComponentParkeringsAlternativ extends Component {
+import { withNavigation } from 'react-navigation';
 
+ class HeaderComponentParkeringsAlternativ extends Component {
 
 
   render() {
 
+
     return (
       <View style={styles.rect6}>
-        <View style={styles.iconRow}>
-        <TouchableOpacity style={styles.goBackButton} >
-          <Icon name="ios-arrow-back" style={styles.icon} />
-          </TouchableOpacity>
-          <Text style={styles.text14}>Parkeringsalternativ</Text>
-        </View>
-      </View>
+              <View style={styles.iconRow}>
+              <TouchableOpacity style={styles.goBackButton} onPress={() => {
+          this.props.navigation.goBack();}}>
+                <Icon name="ios-arrow-back" style={styles.icon} />
+                </TouchableOpacity>
+                <Text style={styles.text14}>Parkeringsalternativ</Text>
+              </View>
+            </View>
     );
   }
 }
@@ -38,9 +38,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: 'space-around',
-
-  //  marginTop: 25,
-
   },
   icon: {
     marginTop: 40,
@@ -69,3 +66,5 @@ const styles = StyleSheet.create({
   },
 
 });
+
+export default withNavigation(HeaderComponentParkeringsAlternativ);
