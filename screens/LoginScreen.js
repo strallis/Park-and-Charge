@@ -7,7 +7,8 @@ import {
   Text,
   StatusBar,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  TextInput
 } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
@@ -23,15 +24,18 @@ export default class LoginScreen extends Component {
   constructor(props) {
   super(props)
   const { navigation } = this.props
-  // this.state = {
-  //   userName: navigation.state.params.username
-  // }
-}
+  }
+
+  state = {
+     username: ''
+  }
+
 
 navigateParkera() {
   const { navigation } = this.props
+  const { username } = this.state
   navigation.navigate('Parkera', {
-    gameID: 1
+    username
   })
 }
 
@@ -54,13 +58,23 @@ navigateParkera() {
           <View style={styles.lowerHalfContainer}>
 
 
-
-          <TouchableOpacity style={styles.rect3} onPress={() => this.navigateParkera()}>
+          <TouchableOpacity style={styles.rect3} onPress={() => this.navigateParkera() }>
             <Text style={styles.textKnappar}>Logga in</Text>
           </TouchableOpacity>
-          <View style={styles.rect2}>
-            <Text style={styles.textKnappar}>Skapa konto</Text>
+
+          <View style={styles.rect3}>
+          <TextInput
+            style={styles.textKnappar}
+            autoCapitalize="none"
+            onChangeText={text => onChangeText(text)}
+            autoCorrect={false}
+            returnKeyType="next"
+            placeholder="Username"
+            placeholderTextColor="rgba(180,180,180,0.8)"
+            onChangeText={text => this.setState({ username: text })}
+          />
           </View>
+
 
 
 
@@ -172,7 +186,8 @@ const styles = StyleSheet.create({
     fontFamily: "montserrat-font",
     letterSpacing: 0,
     marginTop: 9,
-    marginLeft: 100
+    marginLeft: 100,
+    opacity: 0.8,
   },
   rect2: {
     width: 330,

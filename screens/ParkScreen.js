@@ -15,11 +15,15 @@ import ParkHeaderComponent from '../components/ParkHeaderComponent';
 
 export default class ParkScreen extends Component {
 
-  // static navigationOptions = {
-  //   // headerTitle instead of title
-  //   headerTitle: () => <ParkHeaderComponent />,
-  // };
+  constructor(props) {
+    super(props)
 
+    const { navigation } = this.props
+
+    this.state = {
+      userName: navigation.state.params.username
+    }
+  }
 
   render() {
     return (
