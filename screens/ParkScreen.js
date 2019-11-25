@@ -25,7 +25,7 @@ export default class ParkScreen extends Component {
     const { navigation } = this.props
 
     this.state = {
-      userName: navigation.state.params.username
+      userName: 'hej'
     }
   }
 

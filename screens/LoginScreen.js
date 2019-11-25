@@ -14,6 +14,7 @@ import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommun
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 import ParkHeaderComponent from '../components/ParkHeaderComponent';
 
+var CreateSession = require('../api.js').signin;
 
 export default class LoginScreen extends Component {
 
@@ -34,7 +35,7 @@ export default class LoginScreen extends Component {
 navigateParkera() {
   const { navigation } = this.props
   const { username } = this.state
-  navigation.navigate('Parkera', {
+  navigation.navigate('Waiting', {
     username
   })
 //  this.props.navigation.navigate('Calc', { bookingDate : '2017-10-10' })

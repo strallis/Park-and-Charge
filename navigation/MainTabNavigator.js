@@ -35,13 +35,16 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Login: {screen: LoginScreen},// ParkScreen
-    Parkera: {screen: ParkScreen,
-      navigationOptions: {
-              headerLeft: null,
-              headerTitle:<ParkHeaderComponent/>,
-          },
-    },// ParkScreen
+
+        Parkera: {screen: ParkScreen,
+          navigationOptions: {
+                  headerLeft: null,
+                  headerTitle:<ParkHeaderComponent/>,
+              },
+        },
+
+
+
   },
   config
 );
@@ -61,7 +64,7 @@ HomeStack.navigationOptions = ({ navigation }) => {
   const navigationOptions = {};
 
 
-  if (routeName === 'Login') {
+  if (routeName === 'Waiting') {
     navigationOptions.tabBarVisible = false
   }else{
     navigationOptions.tabBarVisible = true
