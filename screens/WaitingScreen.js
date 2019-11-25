@@ -33,8 +33,8 @@ componentDidMount() {
 
         <View style={styles.upperHalfContainer}>
                   <View style={styles.logoContainer}>
+                    <Text style={styles.logoTextStyling}>Park&Charge</Text>
                     <Icon name="car-hatchback" style={styles.carIconStyling} />
-                    <Text style={styles.logoTextStyling}>ParkShark</Text>
                   </View>
         </View>
 
@@ -55,37 +55,42 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   upperHalfContainer: {
-    height: '30%',
+    height: '40%',
     width: '100%',
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'space-around',
+    flexDirection: 'row-reverse'
   },
     lowerHalfContainer: {
-    height: '70%',
+    height: '60%',
     width: '100%',
     backgroundColor: 'white',
     justifyContent: 'space-around',
     alignItems: 'center'
   },
   logoContainer: {
-    height: '20%',
-    width: '50%',
-    flexDirection: 'row',
-    justifyContent: 'space-around'
+  //  height: '20%',
+  //  width: '50%',
+    // flex: 1,
+    // flexDirection: 'row',
+    // justifyContent: 'space-around'
   },
   carIconStyling: {
-    top: 32,
-    left: 58,
-    position: "absolute",
+    // top: 32,
+    // left: 58,
+    //position: "absolute",
     color: "rgba(255,179,0,1)",
-    fontSize: 70
+    fontSize: 70,
+    textAlign: "center",
+    marginTop: -30
   },
   logoTextStyling: {
-    top: 0,
-    left: 0,
+    // top: 0,
+    // left: 0,
     color: "rgba(255,179,0,1)",
-    position: "absolute",
+    //position: "absolute",
+    marginTop: 150,
     fontSize: 44,
     fontFamily: "atm-font",
     letterSpacing: 0,
@@ -106,7 +111,7 @@ const styles = StyleSheet.create({
     color: "#121212",
     fontSize: 34,
     fontFamily: "atm-font",
-    letterSpacing: 0,
+    letterSpacing: 1,
     marginTop: 60,
     marginLeft: 121
   },

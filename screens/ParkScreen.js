@@ -13,6 +13,10 @@ import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 import ParkHeaderComponent from '../components/ParkHeaderComponent';
 
 
+var CreateSession = require('../api.js').signin;
+
+
+
 export default class ParkScreen extends Component {
 
   constructor(props) {
@@ -24,6 +28,21 @@ export default class ParkScreen extends Component {
       userName: navigation.state.params.username
     }
   }
+
+  componentDidMount() {
+
+    const { userName } = this.state
+  //Working
+    CreateSession(userName)
+      .then(res => {
+        console.log(res)
+        this.setState({userName:res.sessionID})
+      })
+      .catch(err => {
+        console.log(err)
+        console.log('Check auth failed error')
+      })
+}
 
   render() {
     return (
@@ -42,16 +61,7 @@ export default class ParkScreen extends Component {
           </View>
 
           <View style={styles.lowerHalfContainer}>
-
-
-
-
-
-
           </View>
-
-
-
       </View>
     );
   }

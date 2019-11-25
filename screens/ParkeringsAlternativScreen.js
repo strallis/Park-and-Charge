@@ -4,12 +4,25 @@ import Icon from "react-native-vector-icons/Ionicons";
 import GoBackButton from '../components/GoBackButton';
 import HeaderComponentParkeringsAlternativ from '../components/HeaderComponentParkeringsAlternativ';
 
+import SlotScreen from '../screens/Slot';
+import CalcScreen from '../screens/Calc';
 
 export default class ParkeringsAlternativScreen extends Component {
   static navigationOptions = {
     headerTitle: () => <HeaderComponentParkeringsAlternativ navigation={this.props.navigation} />,
   };
 
+  constructor(props) {
+  super(props)
+  const { navigation } = this.props
+}
+
+  navigateCalender() {
+    const { navigation } = this.props
+    navigation.navigate('Calc', {
+      gameID: 1
+    })
+}
 
   render() {
     return (
@@ -47,7 +60,10 @@ export default class ParkeringsAlternativScreen extends Component {
                 <Text style={styles.text7}>Tillgänglighet</Text>
                 <Text style={styles.text13}>Tillgänglig nu</Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.navigateCalender()}
+                style={styles.button}
+              >
               <Text style={styles.text9}>Ändra</Text>
               </TouchableOpacity>
             </View>

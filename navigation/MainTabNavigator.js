@@ -13,6 +13,11 @@ import LoginScreen from '../screens/LoginScreen';
 import HyrUtScreen from '../screens/HyrUtScreen';
 import ParkeringsAlternativScreen from '../screens/ParkeringsAlternativScreen';
 
+
+import SlotScreen from '../screens/Slot';
+import CalcScreen from '../screens/Calc';
+
+
 import BedrifterComponent from '../components/BedrifterComponent';
 import HyrUtComponent from '../components/HyrUtComponent';
 import ParkeraComponent from '../components/ParkeraComponent';
@@ -77,11 +82,25 @@ HomeStack.path = '';
 
 
 
+
+
 const HyrUtStack = createStackNavigator(
 
   {
     Uthyrningar: {screen: HyrUtScreen},
     ParkeringsAlternativ: {screen: ParkeringsAlternativScreen,
+      navigationOptions: {
+              headerLeft: null,
+              headerTitle:<HeaderComponentParkeringsAlternativ/>,
+          },
+        },
+    Slots: {screen: SlotScreen,
+      navigationOptions: {
+              headerLeft: null,
+              headerTitle:<HeaderComponentParkeringsAlternativ/>,
+          },
+        },
+    Calc: {screen: CalcScreen,
       navigationOptions: {
               headerLeft: null,
               headerTitle:<HeaderComponentParkeringsAlternativ/>,

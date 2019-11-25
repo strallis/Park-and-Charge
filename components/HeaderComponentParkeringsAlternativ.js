@@ -17,7 +17,7 @@ import { withNavigation } from 'react-navigation';
           this.props.navigation.goBack();}}>
                 <Icon name="ios-arrow-back" style={styles.icon} />
                 </TouchableOpacity>
-                <Text style={styles.text14}>Parkeringsalternativ</Text>
+                <Text style={styles.text14}>Din Laddstolpe</Text>
               </View>
             </View>
     );
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     fontFamily: "atm-font",
     letterSpacing: 0,
     alignSelf: "center",
-    marginRight: 20,
+    marginRight: 60,
     // marginTop: 7
   },
 

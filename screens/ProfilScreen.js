@@ -9,12 +9,56 @@ import {
 } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
+var latestUser = require('../api.js').latestSession;
 
 export default class ProfilePage extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      userName: 'lololo',
+      lastName:'',
+      firstName:'',
+      data:[]
+    }
+  }
+
   static navigationOptions = {
     //To hide the ActionBar/NavigationBar
     header: null,
 };
+
+  fetchData= async()=>{
+
+
+    const response = await fetch('http://130.229.191.224:8989/user');
+    const users = await response.json();
+    this.setState({data: users});
+    this.setState({firstName: users[0].first_name});
+    this.setState({lastName: users[0].last_name});
+
+
+  }
+
+  componentDidMount() {
+
+  //   //const { userName } = this.state
+  // //Working
+  //   latestUser()
+  //     .then(res => {
+  //       console.log(res)
+  //       //this.setState({userName:res.userName})
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //       console.log('Check auth failed error')
+  //       this.setState({userName:'Henrik Blomgren'})
+  //     })
+      // Use when at school
+      //this.fetchData();
+  }
+
 
   render() {
     return (

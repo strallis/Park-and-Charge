@@ -12,6 +12,8 @@ import IoniconsIcon from "react-native-vector-icons/Ionicons";
 import HeaderComponent from '../components/HeaderComponent';
 import PlusButtonComponent from '../components/PlusButtonComponent';
 
+
+
 window.navigator.userAgent = 'react-native'
 
 export default class HyrUtScreen extends Component {

@@ -18,7 +18,7 @@ export default class ParkHeaderComponent extends Component {
 
       <View style={styles.rect4}>
         <View style={styles.text4Row}>
-          <Text style={styles.text4}>ParkShark</Text>
+          <Text style={styles.text4}>Park&Charge</Text>
           <MaterialCommunityIconsIcon
             name="car-hatchback"
             style={styles.icon2}
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flex: 1,
     marginRight: 89,
-    marginLeft: 89,
+    marginLeft: 74,
     marginTop: 45
   },
   text4: {

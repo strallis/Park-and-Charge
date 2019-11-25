@@ -37,6 +37,7 @@ navigateParkera() {
   navigation.navigate('Parkera', {
     username
   })
+//  this.props.navigation.navigate('Calc', { bookingDate : '2017-10-10' })
 }
 
   render() {
@@ -74,14 +75,7 @@ navigateParkera() {
             onChangeText={text => this.setState({ username: text })}
           />
           </View>
-
-
-
-
           </View>
-
-
-
       </View>
     );
   }
