@@ -143,21 +143,23 @@ export default class Slot extends Component {
   }
   removeTimeSlot(item){
 
-    const newItems = {};
 
-    Object.keys(this.state.items).forEach(key => {
-
-      newItems[key] = this.state.items[key];
-
-      if ( arr[i] === item.key ) {
-        this.state.items.splice(i, 1); 
-      }
-
-    });
-
-    this.setState({
-      items: newItems
-    });
+    console.log('remove it');
+    // const newItems = {};
+    //
+    // Object.keys(this.state.items).forEach(key => {
+    //
+    //   newItems[key] = this.state.items[key];
+    //
+    //   if ( arr[i] === item.key ) {
+    //     this.state.items.splice(i, 1);
+    //   }
+    //
+    // });
+    //
+    // this.setState({
+    //   items: newItems
+    // });
 
   }
 

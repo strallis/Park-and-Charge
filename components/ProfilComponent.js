@@ -57,11 +57,13 @@ const styles = StyleSheet.create({
     opacity: 1,
     paddingTop: 4,
     fontSize: 14,
+    fontFamily: "montserrat-font",
   },
   btnTextDark: {
     color: "rgba(0,0,0,1)",
     opacity: 1,
     paddingTop: 4,
     fontSize: 14,
+    fontFamily: "montserrat-font",
   }
 });

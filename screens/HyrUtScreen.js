@@ -136,7 +136,8 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "montserrat-font"
+    fontFamily: "montserrat-font",
+    marginLeft:-18,
   },
   text12: {
     top: 34,
@@ -144,7 +145,8 @@ const styles = StyleSheet.create({
     color: "rgba(155,155,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "montserrat-font"
+    fontFamily: "montserrat-font",
+    marginLeft:-18,
   },
   text9Stack: {
     width: 247,
@@ -155,8 +157,9 @@ const styles = StyleSheet.create({
     fontSize: 58,
     height: 58,
     width: 58,
-    marginLeft: 30,
-    marginTop: 6
+    marginLeft: 18,
+    marginTop: 6,
+
   },
   text9StackRow: {
     height: 64,
@@ -194,7 +197,8 @@ const styles = StyleSheet.create({
     color: "rgba(155,155,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "montserrat-font"
+    fontFamily: "montserrat-font",
+
   },
   text13Stack: {
     width: 247,

@@ -46,7 +46,7 @@ export default class ParkeringsAlternativScreen extends Component {
                 <Text style={styles.text4}>Pris</Text>
 
               </View>
-              <Text style={styles.text5}>3 SEK/Min</Text>
+              <Text style={styles.text5}>20 SEK/timme</Text>
               <Text style={styles.text6}>Ändra</Text>
 
 
@@ -57,7 +57,7 @@ export default class ParkeringsAlternativScreen extends Component {
           <View style={styles.rect4}>
             <View style={styles.text7ColumnRow}>
               <View style={styles.text7Column}>
-                <Text style={styles.text7}>Tillgänglighet</Text>
+                <Text style={styles.text7}>Schemalägg</Text>
                 <Text style={styles.text13}>Tillgänglig nu</Text>
               </View>
               <TouchableOpacity
@@ -77,6 +77,14 @@ export default class ParkeringsAlternativScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+  buttonCircle: {
+    width: 40,
+    height: 40,
+    backgroundColor: 'rgba(0, 0, 0, .2)',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   container: {
     flex: 1,
     borderColor: "#000000",
@@ -123,6 +131,7 @@ const styles = StyleSheet.create({
     color: "rgba(255,179,0,1)",
     fontSize: 22,
     fontFamily: "montserrat-font",
+    fontWeight:'bold'
     //marginLeft: 15
   },
   text2Row: {
@@ -149,7 +158,8 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,1)",
     position: "absolute",
     fontSize: 26,
-    fontFamily: "montserrat-700"
+    fontFamily: "montserrat-700",
+    marginLeft: -7
   },
   rect5: {
     top: 0,
@@ -200,7 +210,8 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,1)",
     position: "absolute",
     fontSize: 26,
-    fontFamily: "montserrat-font"
+    fontFamily: "montserrat-font",
+    marginLeft: -7
   },
   text6: {
     top: 42,
@@ -208,7 +219,8 @@ const styles = StyleSheet.create({
     color: "rgba(255,179,0,1)",
     position: "absolute",
     fontSize: 22,
-    fontFamily: "montserrat-font"
+    fontFamily: "montserrat-font",
+    fontWeight:'bold'
   },
   text4StackStack: {
     width: 419,
@@ -228,13 +240,15 @@ const styles = StyleSheet.create({
   text7: {
     color: "rgba(0,0,0,1)",
     fontSize: 26,
-    fontFamily: "montserrat-700"
+    fontFamily: "montserrat-700",
+    marginLeft: -7
   },
   text13: {
     color: "rgba(0,0,0,1)",
     fontSize: 26,
     fontFamily: "montserrat-font",
-    marginTop: 20
+    marginTop: 20,
+    marginLeft: -7
   },
   text7Column: {
     width: 190
@@ -244,7 +258,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontFamily: "montserrat-font",
     marginLeft: 65,
-    marginTop: 25
+    marginTop: 25,
+    fontWeight:'bold'
   },
   text7ColumnRow: {
     height: 72,

@@ -25,7 +25,7 @@ export default function BedrifterComponent(props) {
     >
 
       <EntypoIcon name="bar-graph" style={props.focused ? styles.icon1Dark : styles.icon1Light} />
-      <Text style={props.focused ? styles.btn1TextDark : styles.btn1TextLight}>Bedrifter</Text>
+      <Text style={props.focused ? styles.btn1TextDark : styles.btn1TextLight}>Miljöhjälte</Text>
 
     </View>
     </View>
@@ -66,10 +66,13 @@ const styles = StyleSheet.create({
   btn1TextLight: {
     color: "rgba(128,128,128,1)",
     opacity: 0.8,
-    fontFamily: "montserrat-font"
+    fontFamily: "montserrat-font",
+    marginRight: -5
   },
   btn1TextDark: {
     color: "rgba(0,0,0,1)",
-    opacity: 0.8
+    opacity: 0.8,
+    marginRight: -5,
+    fontFamily: "montserrat-font",
   }
 });

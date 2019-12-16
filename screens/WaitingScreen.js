@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     height: '40%',
     width: '100%',
     backgroundColor: 'white',
+    // backgroundColor: "rgba(255,179,0,1)",
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row-reverse'
@@ -66,10 +67,12 @@ const styles = StyleSheet.create({
     height: '60%',
     width: '100%',
     backgroundColor: 'white',
+    // backgroundColor: "rgba(255,179,0,1)",
     justifyContent: 'space-around',
     alignItems: 'center'
   },
   logoContainer: {
+    // color: "rgba(255,179,0,1)",
   //  height: '20%',
   //  width: '50%',
     // flex: 1,
@@ -81,6 +84,7 @@ const styles = StyleSheet.create({
     // left: 58,
     //position: "absolute",
     color: "rgba(255,179,0,1)",
+    // color: "black",
     fontSize: 70,
     textAlign: "center",
     marginTop: -30
@@ -89,6 +93,7 @@ const styles = StyleSheet.create({
     // top: 0,
     // left: 0,
     color: "rgba(255,179,0,1)",
+    // color: "black",
     //position: "absolute",
     marginTop: 150,
     fontSize: 44,

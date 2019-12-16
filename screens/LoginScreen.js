@@ -13,8 +13,12 @@ import {
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 import ParkHeaderComponent from '../components/ParkHeaderComponent';
+import MapView from 'react-native-maps';
+import { Marker } from 'react-native-maps';
 
 var CreateSession = require('../api.js').signin;
+const markerImage = require('../assets/images/markerRed5.png');
+const markerImage2 = require('../assets/images/markerYellow1.png');
 
 export default class LoginScreen extends Component {
 
@@ -28,7 +32,23 @@ export default class LoginScreen extends Component {
   }
 
   state = {
-     username: ''
+     username: '',
+     markers: [
+       {latlng:{latitude: 59.35,longitude: 18.06},
+        description: "Utomhusparkering\nValhallavägen 8\n30 kr/h",
+        pressed: false,
+
+       },
+       {latlng:{latitude: 59.34,longitude: 18.07},
+        description: "Garageparkering\nEngelbrektsgatan 19\n60 kr/h",
+        pressed: false,
+
+       },
+       {latlng:{latitude: 59.33,longitude: 18.05},
+        description: "Garageparkering\nKungsklippan 11\n50 kr/h",
+        pressed: false,
+       },
+   ]
   }
 
 
@@ -45,46 +65,94 @@ navigateParkera() {
     return (
       <View style={styles.container}>
 
-          <View style={styles.upperHalfContainer}>
+      <MapView
+      provider="google"
+      style = {styles.mapStyle}
+      ref={c => this.mapView = c}
+      initialRegion = {{
+        latitude: 59.35,
+        longitude: 18.07,
+        latitudeDelta: 0.05,
+        longitudeDelta: 0.025
+      }}
 
-          <View style={styles.rect}>
+      showsUserLocation = {true}
+      showsMyLocationButton = {true}>
 
-            <View style={styles.textRow}>
-              <Text style={styles.text}>Var vill du parker?</Text>
-              <EvilIconsIcon name="search" style={styles.icon} />
-            </View>
-          </View>
+      {this.state.markers.map((marker,i) => (
+        <Marker
+        key = {i}
+        coordinate = {marker.latlng}
+        title = {marker.title}
+        image = {this.state.selectedMarkerIndex === i || marker.pressed ? markerImage2 : markerImage}
+        >
+        </Marker>
+      ))}
 
-          </View>
+      </MapView>
 
-          <View style={styles.lowerHalfContainer}>
+      <TouchableOpacity style={styles.rect32} onPress={() => this.navigateParkera() }>
+        <Text style={styles.textKnappar}>Logga in</Text>
+      </TouchableOpacity>
+
+      <View style={styles.rect3}>
+      <TextInput
+        style={styles.textKnappar}
+        autoCapitalize="none"
+        onChangeText={text => onChangeText(text)}
+        autoCorrect={false}
+        returnKeyType="next"
+        placeholder="Användarnamn"
+        placeholderTextColor="rgba(180,180,180,0.8)"
+        onChangeText={text => this.setState({ username: text })}
+      />
+      </View>
 
 
-          <TouchableOpacity style={styles.rect3} onPress={() => this.navigateParkera() }>
-            <Text style={styles.textKnappar}>Logga in</Text>
-          </TouchableOpacity>
-
-          <View style={styles.rect3}>
-          <TextInput
-            style={styles.textKnappar}
-            autoCapitalize="none"
-            onChangeText={text => onChangeText(text)}
-            autoCorrect={false}
-            returnKeyType="next"
-            placeholder="Username"
-            placeholderTextColor="rgba(180,180,180,0.8)"
-            onChangeText={text => this.setState({ username: text })}
-          />
-          </View>
-          </View>
       </View>
     );
   }
 }
-
+// <View style={styles.upperHalfContainer}>
+//
+// <View style={styles.rect}>
+//
+//   <View style={styles.textRow}>
+//     <Text style={styles.text}>Var vill du parkera?</Text>
+//     <EvilIconsIcon name="search" style={styles.icon} />
+//   </View>
+// </View>
+//
+// </View>
+//
+// <View style={styles.lowerHalfContainer}>
+//
+//
+// <TouchableOpacity style={styles.rect3} onPress={() => this.navigateParkera() }>
+//   <Text style={styles.textKnappar}>Logga in</Text>
+// </TouchableOpacity>
+//
+// <View style={styles.rect3}>
+// <TextInput
+//   style={styles.textKnappar}
+//   autoCapitalize="none"
+//   onChangeText={text => onChangeText(text)}
+//   autoCorrect={false}
+//   returnKeyType="next"
+//   placeholder="Username"
+//   placeholderTextColor="rgba(180,180,180,0.8)"
+//   onChangeText={text => this.setState({ username: text })}
+// />
+// </View>
+// </View>
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  mapStyle: {
+    flex:1,
+    width: '100%', //Dimensions.get('window').width,
+    height: '100%', //Dimensions.get('window').height
   },
   upperHalfContainer: {
     height: '40%',
@@ -167,12 +235,30 @@ const styles = StyleSheet.create({
     width: 330,
     height: 52,
     backgroundColor: "rgba(255,255,255,1)",
-    opacity: 0.8,
+    //opacity: 0.8,
     borderRadius: 100,
     borderColor: "#000000",
     borderWidth: 1,
     marginTop: 5,
+    marginLeft: 20,
     marginBottom: 10,
+    position:'absolute',
+    bottom: 65,
+
+  },
+  rect32: {
+    width: 330,
+    height: 52,
+    backgroundColor: "rgba(255,255,255,1)",
+    //opacity: 0.8,
+    borderRadius: 100,
+    borderColor: "#000000",
+    borderWidth: 1,
+    marginTop: 5,
+    marginBottom: 20,
+    marginLeft: 20,
+    position:'absolute',
+    bottom:115,
 
   },
   textKnappar: {
@@ -181,7 +267,8 @@ const styles = StyleSheet.create({
     fontFamily: "montserrat-font",
     letterSpacing: 0,
     marginTop: 9,
-    marginLeft: 100,
+    //marginLeft: 10,
+    alignSelf: 'center',
     opacity: 0.8,
   },
   rect2: {

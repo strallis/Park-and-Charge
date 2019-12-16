@@ -5,10 +5,13 @@ import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View, Text, Image} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo';
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+//import Icon from 'react-native-vector-icons/FontAwesome';
 
 import AppIntroSlider from 'react-native-app-intro-slider';
 
 import AppNavigator from './navigation/AppNavigator';
+
 
 
 
@@ -17,11 +20,13 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
+
     this.state = {
         show_Main_App: false,
         isWalkthroughDone: false,
         isSkip: false,
-        isLoadingComplete: false
+        isLoadingComplete: false,
+        userIcon:null
 
     };
 }
@@ -47,6 +52,7 @@ async  loadResourcesAsync() {
   ]);
 }
 
+
        on_Done_all_slides= () => {
 
         this.setState({ isWalkthroughDone: true });
@@ -56,6 +62,7 @@ async  loadResourcesAsync() {
 
          on_Skip_slides= () => {
         this.setState({ isSkip: true });
+        return true;
       };
 
 
@@ -72,6 +79,40 @@ async  loadResourcesAsync() {
       };
 
 
+          _renderNextButton = () => {
+        return (
+          <View style={styles.buttonCircle}>
+            <Ionicons
+              name="md-arrow-round-forward"
+              color="rgba(255, 255, 255, .9)"
+              size={24}
+              style={{ backgroundColor: 'transparent' }}
+            />
+          </View>
+        );
+      };
+        _renderDoneButton = () => {
+          return (
+            <View style={styles.buttonCircle}>
+              <Ionicons
+                name="md-checkmark"
+                color="rgba(255, 255, 255, .9)"
+                size={24}
+                style={{ backgroundColor: 'transparent' }}
+              />
+            </View>
+          );
+        };
+
+        _renderSkipButton = () => {
+          return (
+            <View style={styles.buttonCircle}>
+            <Text style={styles.skipStyle} >
+              Skip
+            </Text>
+            </View>
+          );
+        };
 render() {
 
   if (!this.state.isLoadingComplete ) {
@@ -80,6 +121,7 @@ render() {
                 startAsync={this.loadResourcesAsync}
                 onError={this.handleLoadingError}
                 onFinish={this.handleFinishLoading}
+
               />
               );
   } else {
@@ -105,7 +147,11 @@ render() {
                      <AppIntroSlider slides={slides}
                      onDone={this.on_Done_all_slides}
                       showSkipButton={true}
-                      onSkip={this.on_Skip_slides} />
+                      onSkip={this.on_Done_all_slides}
+                      renderDoneButton={this._renderDoneButton}
+                      renderNextButton={this._renderNextButton}
+                      renderSkipButton={this._renderSkipButton}
+                       />
                     );
                }
 
@@ -116,19 +162,28 @@ render() {
 
 
 
-
-
-
-
-
-
-
-
-
 const styles = StyleSheet.create({
+  iconLight: {
+    fontSize: 50,
+    opacity: 1
+},
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  skipStyle:{
+    fontSize: 16,
+    color: "white",
+    fontFamily: 'montserrat-font',
+    fontWeight: 'bold'
+  },
+  buttonCircle: {
+    width: 40,
+    height: 40,
+    backgroundColor: 'rgba(0, 0, 0, .2)',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   containernavBarPark: {
   flex: 1,
@@ -146,81 +201,122 @@ mainContent: {
     justifyContent: 'space-around',
   },
   image: {
-    width: 320,
-    height: 320,
+    width: 310,
+    height: 300,
   },
-  text: {
-    color: 'rgba(255, 255, 255, 0.8)',
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-    paddingHorizontal: 16,
+  logoImage: {
+    width: 390,
+    height: 390,
   },
-
   title: {
    fontSize: 26,
    color: '#fff',
    fontWeight: 'bold',
    textAlign: 'center',
    marginTop: 20,
+   fontFamily: 'montserrat-font',
+  },
+  titleLogo: {
+   fontSize: 26,
+   color: '#fff',
+   fontWeight: 'bold',
+   textAlign: 'center',
+   marginTop: 40,
+   fontFamily: 'montserrat-font',
+  },
+  textLogo: {
+   color: '#fff',
+   fontSize: 20,
+   marginTop: -40,
+   fontFamily: 'montserrat-font',
   },
   text: {
    color: '#fff',
    fontSize: 20,
+   fontFamily: 'montserrat-font',
   },
+  textWhiteImg: {
+   color: 'black',
+   fontSize: 20,
+   fontFamily: 'montserrat-font',
+  },
+  titleWhiteImg: {
+   fontSize: 26,
+   color: 'black',
+   fontWeight: 'bold',
+   textAlign: 'center',
+   marginTop: 20,
+   fontFamily: 'montserrat-font',
+  },
+
 
 
 });
+// Fa in ngt med typ hyra ut nar du inte använder dne.
+
 const slides = [
   {
-    key: 'k1',
-    title: 'Ecommerce Leader',
-    text: 'Best ecommerce in the world',
-    image: {
-      uri:
-        'https://i.imgur.com/jr6pfzM.png',
-    },
-    titleStyle: styles.title,
-    textStyle: styles.text,
-    imageStyle: styles.image,
-    backgroundColor: '#F7BB64',
+    key: 'logoSlide',
+    title: 'Välkommen!',
+    text: 'Park&Charge är ett nätverk där elbilsägare sammankopplas för att hyra, samt hyra ut sina laddplatser till varandra.',
+    image: require('./assets/images/logo2.png'),
+    titleStyle: styles.titleLogo,
+    textStyle: styles.textLogo,
+    imageStyle: styles.logoImage,
+    backgroundColor: "rgba(255,179,0,1)",
+
   },
   {
-    key: 'k2',
-    title: 'fast delivery',
-    text: 'get your order insantly fast',
-    image: {
-      uri:
-        'https://i.imgur.com/au4H7Vt.png',
-    },
+    key: 'parkeraSlide',
+    title: 'Hyr andras laddplatser!',
+    text: 'För att hyra andras laddplatser navigerar du till parkeringsläget.',
+    image: require('./assets/images/park.png'),
     titleStyle: styles.title,
     textStyle: styles.text,
     imageStyle: styles.image,
-    backgroundColor: '#F4B1BA',
+    backgroundColor: "rgba(255,179,0,1)",
   },
   {
-    key: 'k3',
-    title: 'many store ',
-    text: 'Multiple store location',
-    image: {
-      uri: 'https://i.imgur.com/bXgn893.png',
-    },
-    titleStyle: styles.title,
-    textStyle: styles.text,
+    key: 'hyrutSlide',
+    title: 'Vill du hyra ut din egen laddstolpe?',
+    text: 'Här lägger du upp, schemalägger och ställer in pris för din laddplats.',
+    image: require('./assets/images/hyrut.png'),
+    titleStyle: styles.titleWhiteImg,
+    textStyle: styles.textWhiteImg,
     imageStyle: styles.image,
-    backgroundColor: '#4093D2',
+    backgroundColor: "white",
   },
+  // {
+  //   key: 'hyrutSlide',
+  //   title: 'Vill du hyra ut din egen laddstolpe till andra elbilsägare?',
+  //   text: 'Då letar du upp den här symbolen! Här kan du registrera dina laddplatser, schemalägga när de är tillgängliga och ställa in hur mycket du vill ha betalt.',
+  //   image: require('./assets/images/hyrut.png'),
+  //   titleStyle: styles.titleWhiteImg,
+  //   textStyle: styles.textWhiteImg,
+  //   imageStyle: styles.image,
+  //   backgroundColor: "white",
+  // },
+
   {
-    key: 'k4',
-    title: '24 hours suport',
-    text: ' Get Support 24 Hours with Real Human',
-    image: {
-      uri: 'https://i.imgur.com/mFKL47j.png',
-    },
+    key: 'miljoSlide',
+    title: 'Hur mycket har du bidragit till klimatet?',
+    text: 'Här kan du se hur mycket din insats bidragit för dig, andra elbilsägare och klimatet.',
+    image: require('./assets/images/miljohjalte2.png'),
     titleStyle: styles.title,
     textStyle: styles.text,
     imageStyle: styles.image,
-    backgroundColor: '#644EE2',
-  }
+    backgroundColor: "rgba(255,179,0,1)",
+  },
+  // {
+  //   key: 'profilSlide',
+  //   title: 'Kontoinställningar',
+  //   text: 'Under profilsidan hittar du saker som kontoinställningar och parkeringshistorik.',
+  //   image: require('./assets/images/profil.png'),
+  //   titleStyle: styles.titleWhiteImg,
+  //   textStyle: styles.textWhiteImg,
+  //   imageStyle: styles.image,
+  //   backgroundColor: "white",
+  // }
 ];
 
 //module.exports = App

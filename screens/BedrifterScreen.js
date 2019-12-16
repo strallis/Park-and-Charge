@@ -10,8 +10,8 @@ const FIVE_SECONDS = 3500;
 export default class WaitingScreen extends Component {
 
   static navigationOptions = {
-    headerTitle: "Bedrifter",
-    headerTitle: () => <HeaderComponent  title = {'Bedrifter'}/>,
+    headerTitle: "Miljöhjälte",
+    headerTitle: () => <HeaderComponent  title = {'Miljöhjälte'}/>,
   };
 
   render() {

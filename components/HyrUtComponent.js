@@ -55,10 +55,12 @@ const styles = StyleSheet.create({
 },
   btnTextLight: {
     color: "rgba(128,128,128,1)",
-    opacity: 0.8
+    opacity: 0.8,
+    fontFamily: "montserrat-font",
   },
   btnTextDark: {
     color: "rgba(0,0,0,1)",
-    opacity: 0.8
+    opacity: 0.8,
+    fontFamily: "montserrat-font",
   }
 });

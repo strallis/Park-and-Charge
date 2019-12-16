@@ -171,7 +171,7 @@ BedrifterStack.path = '';
 bottomNavigatorConfigs = {
    initialRouteName: "HomeStack",
    tabBarOptions: {
-       style:{  width: 375,
+       style:{  width: "100%",
                 height: 112,
                 shadowOffset: {
                   height: -2
