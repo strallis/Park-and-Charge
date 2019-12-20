@@ -1,6 +1,15 @@
 # ParkShark
 A React Native prototype for a project aimed at sharing private electric vehicle charging stations in Stockholm.
 
+## Authors
+[Tomas Hermansson](https://github.com/therm8) ,
+[Alexandra Hotti](https://github.com/alexandrahotti) ,
+[Julia Liu](https://github.com/Julialiuu) 
+[Marcus Nystad Öhman](https://github.com/marcusNystad) ,
+[Daniel Strallhofer](https://github.com/strallis) ,
+
+
+
 ## Executive Summary
 Park&Charge is a high-fidelity prototype application built and designed by us, 5 KTH students, to
 showcase a sharing economy solution to target the lack of charging stations for electric vehicles (EV)
@@ -16,7 +25,7 @@ the technical implementation of that design. Thereafter the report describes the
 our application would fare on the marketplace before discussing a set of key issues further. Finally,
 we present the way forward - what should come next.
 
-The full report can be found here: 
+The full report can be found here: [Report](https://github.com/alexandrahotti/Park-and-Charge/blob/master/Final_Report_Group_10.pdf)
 
 ## The App
 ### Walkthrough slides
