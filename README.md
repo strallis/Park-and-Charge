@@ -6,7 +6,7 @@ A React Native prototype for a project aimed at sharing private electric vehicle
 [Alexandra Hotti](https://github.com/alexandrahotti) ,
 [Julia Liu](https://github.com/Julialiuu) 
 [Marcus Nystad Öhman](https://github.com/marcusNystad) ,
-[Daniel Strallhofer](https://github.com/strallis) ,
+[Daniel Strallhofer](https://github.com/strallis)
 
 
 
